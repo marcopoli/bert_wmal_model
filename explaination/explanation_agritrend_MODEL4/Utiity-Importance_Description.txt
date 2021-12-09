@@ -1,0 +1,17 @@
+Protocollo:
+Fisso il modello POS oppure NEG.
+Seleziono un termine. Vario il valore di WMAL, con gaussiana valore medio wmal[termine] e deviazione standard 4, 100 volte.
+yij è la probabilità che ottengo per la classe predetta dal modello per lo specifico esempio.
+
+Importance:
+Quanto il valore di WMAL è importante per la predizione fatta?
+Prob(Max) e Prob(Min) sono la probabilità massima e minima che si ottiene dai trial per la GOLD LABEL dell'esempio.
+Se La differenza fra Prob(Max) e Prob(Min) è bassa allora il termine NON è importante per la predizione della CLASSE della GOLD LABEL.
+Cioè qualsiasi valore diamo a WMAL il risultato non cambia.
+
+Utility:
+Rispetto alla possibile varietà di valori di probabilità ottenibili quello reale quanto è buono?
+Esiste un valore di WMAL migliore ai fini della predizione?
+yij - Prob(Min) / ( Prob(Max) - Prob(Min)  )
+Se yij si distacca molto dal valore minimo ammissibile di probabilità allora è utile ai fini della predizione.
+Cioè il valore di WMAL è fra i migliori ipotizzabili.
